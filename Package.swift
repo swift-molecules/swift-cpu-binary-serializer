@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-cpu.git",
+            url: "https://github.com/swift-atoms/swift-cpu.git",
             branch: "main"
         ),
         .package(
@@ -45,7 +45,15 @@ let package = Package(
         ),
         .testTarget(
             name: "CPU Binary Serializer Tests",
-            dependencies: ["CPU Binary Serializer"]
+            dependencies: [
+                "CPU Binary Serializer",
+                .product(name: "CPU", package: "swift-cpu"),
+                .product(name: "Binary", package: "swift-binary"),
+                .product(
+                    name: "Binary Serializable",
+                    package: "swift-binary-serializer"
+                ),
+            ]
         ),
     ],
     swiftLanguageModes: [.v6]

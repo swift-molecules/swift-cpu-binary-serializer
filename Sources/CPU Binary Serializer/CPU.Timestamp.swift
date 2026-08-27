@@ -1,5 +1,5 @@
-public import Binary
 public import Binary_Serializable
-public import CPU
+public import enum Binary.Binary
+public import enum CPU.CPU
 
-extension CPU.Timestamp: Binary.Serializable {}
+extension CPU.Timestamp: @retroactive Binary.Serializable {}
