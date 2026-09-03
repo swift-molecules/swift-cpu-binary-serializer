@@ -27,6 +27,10 @@ let package = Package(
             branch: "main"
         ),
         .package(
+            url: "https://github.com/swift-atoms/swift-byte.git",
+            branch: "main"
+        ),
+        .package(
             url: "https://github.com/swift-molecules/swift-binary-serializer.git",
             branch: "main"
         ),
@@ -48,6 +52,7 @@ let package = Package(
             dependencies: [
                 "CPU Binary Serializer",
                 .product(name: "CPU", package: "swift-cpu"),
+                .product(name: "Byte", package: "swift-byte"),
                 .product(name: "Binary", package: "swift-binary"),
                 .product(
                     name: "Binary Serializable",
